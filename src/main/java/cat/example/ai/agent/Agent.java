@@ -14,4 +14,6 @@ public interface Agent {
         return List.of();
     }
 
+    default void reset() {}
+
 }

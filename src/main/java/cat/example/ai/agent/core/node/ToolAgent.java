@@ -1,4 +1,4 @@
-package cat.example.ai.agent.node;
+package cat.example.ai.agent.core.node;
 
 import cat.example.ai.agent.Agent;
 import cat.example.ai.llm.ChatModel;

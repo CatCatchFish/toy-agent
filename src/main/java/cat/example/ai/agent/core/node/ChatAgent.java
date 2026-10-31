@@ -1,8 +1,10 @@
-package cat.example.ai.agent.node;
+package cat.example.ai.agent.core.node;
 
 import cat.example.ai.agent.Agent;
 import cat.example.ai.llm.ChatModel;
 import cat.example.ai.llm.Message;
+import cat.example.ai.llm.Models;
+import cat.example.ai.llm.OpenAiChatModel;
 
 import java.util.List;
 
@@ -25,6 +27,12 @@ public interface ChatAgent extends Agent {
         public String chat(String prompt) {
             return chatModel.chat(List.of(Message.system(prompt)));
         }
+    }
+
+    public static void main(String[] args) {
+        OpenAiChatModel chatModel = Models.getChatModel();
+        ChatAgentImpl chatAgent = new ChatAgentImpl(chatModel);
+        System.out.println(chatAgent.chat("你好"));
     }
 
 }
